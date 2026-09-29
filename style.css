@@ -360,6 +360,8 @@ h2 {
 }
 
 .pub-featured {
+  grid-template-columns: 280px minmax(0, 1fr);
+  column-gap: 24px;
   padding: 22px 22px 20px;
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -367,13 +369,25 @@ h2 {
 }
 
 .pub-cover {
-  grid-column: 1 / -1;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
   display: block;
-  margin: -22px -22px 20px;
   overflow: hidden;
-  border-bottom: 1px solid var(--border);
-  border-radius: 15px 15px 0 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
   background: #efefee;
+}
+
+.pub-featured .pub-tag {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 0 0 8px;
+}
+
+.pub-featured .pub-body {
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .pub-cover picture,
@@ -623,8 +637,15 @@ a.btn:hover {
     padding: 18px 16px;
   }
 
+  .pub-featured .pub-cover,
+  .pub-featured .pub-tag,
+  .pub-featured .pub-body {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
   .pub-cover {
-    margin: -18px -16px 16px;
+    margin-bottom: 14px;
   }
 
   .models {
