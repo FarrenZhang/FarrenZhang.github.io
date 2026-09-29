@@ -366,6 +366,29 @@ h2 {
   background: var(--bg-soft);
 }
 
+.pub-cover {
+  grid-column: 1 / -1;
+  display: block;
+  margin: -22px -22px 20px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  border-radius: 15px 15px 0 0;
+  background: #efefee;
+}
+
+.pub-cover picture,
+.pub-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .pub-cover img {
+    filter: brightness(0.9);
+  }
+}
+
 /* Link buttons */
 
 .links {
@@ -598,6 +621,10 @@ a.btn:hover {
 
   .pub-featured {
     padding: 18px 16px;
+  }
+
+  .pub-cover {
+    margin: -18px -16px 16px;
   }
 
   .models {
